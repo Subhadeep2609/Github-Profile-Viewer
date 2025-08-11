@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GitHub Profile Viewer</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+  <!-- Main script (deferred so GSAP is loaded) -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <div class="viewer">
+      <header class="viewer__head">
+        <h1 class="title">GitHub Profile Viewer</h1>
+        <p class="subtitle">Type a GitHub username and get a beautiful profile card — with smooth animations.</p>
+      </header>
+
+      <form id="searchForm" class="search" onsubmit="return false;" aria-label="Search GitHub user">
+        <label for="username" class="visually-hidden">GitHub username</label>
+        <input id="username" class="search__input" type="text" placeholder="e.g. octocat" autocomplete="off" />
+        <button id="getBtn" class="search__btn" type="button" aria-label="Get profile">Get Profile</button>
+      </form>
+
+      <div id="profile" class="profile-area" aria-live="polite">
+        <!-- Profile card will be injected here -->
+      </div>
+
+      <footer class="credits">
+        <small>Built with ❤️ · Powered by GitHub API · Animations via GSAP</small>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
